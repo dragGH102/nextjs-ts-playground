@@ -166,7 +166,7 @@ const Home: React.FC = ({ allPostsData }) => (
 
           .card {
             margin: 1rem;
-            flex-basis: 45%;
+            flex-basis: 20%;
             padding: 1.5rem;
             text-align: left;
             color: inherit;
