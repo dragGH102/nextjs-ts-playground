@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { getAllPostIds, getPostData } from '@/lib/posts';
 import { PostData } from '@/lib/shared-types';
 import Layout from '@/components/Layout';
 import Date from '@/components/Date';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import utilStyles from '../../../styles/utils.module.css';
 
 export default function Post({ postData }: PostData): JSX.Element {
+  const router = useRouter();
+
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setCounter(parseInt(router.query.counter as string, 10));
+  }, [router.query.counter]); // only re-run if this prop changes
+
   return (
     <Layout>
       <Head>
@@ -18,7 +27,25 @@ export default function Post({ postData }: PostData): JSX.Element {
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <p>
+          <span
+            onClick={() => router.push(`/posts/${router.query.id}?counter=123`, undefined, {
+                shallow: true,
+              })
+            }
+          >
+            Update counter
+          </span>
+          !
+        </p>
+        <div>counter: {counter} </div>
       </article>
+
+      <style jsx>{`
+        p span {
+          cursor: pointer;
+        }
+      `}</style>
     </Layout>
   );
 }
