@@ -8,6 +8,8 @@ export default function CatchAllPage(): JSX.Element {
   // /post/<id>/<comment>/[...more sub paths ...]?foo=abc
   const { foo } = router.query;
 
+  console.log(router.query);
+
   const slug = router.query.catchallroute || [];
 
   return (

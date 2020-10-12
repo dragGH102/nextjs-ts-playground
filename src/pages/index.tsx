@@ -78,7 +78,7 @@ const Home: React.FC = ({ allPostsData }) => {
                 brackets (EXPERIMENTAL FEATURE)
                 <Link
                   href="/posts/comment/[[...optionalcatchallroute]]?foo=xyz"
-                  as="/posts/2020/second-post/with/optional/catch/all/routes"
+                  as="/posts/comment/"
                 >
                   <a>Click here to try it!</a>
                 </Link>
