@@ -47,8 +47,9 @@ export default async function handler(
 
   if (method === 'GET') {
     if (pid) {
-      res.statusCode = 200;
-      res.end(`Post: ${pid}`);
+      // res.statusCode = 200;
+      // res.end(`Post: ${pid}`);
+      res.status(200).json({ value: `Post: ${pid}` });
     } else {
       try {
         const error = 'No post id specified';
