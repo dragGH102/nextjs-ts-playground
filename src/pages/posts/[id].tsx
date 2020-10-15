@@ -29,10 +29,12 @@ export default function Post({ postData }: PostData): JSX.Element {
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         <p>
           <span
-            onClick={() => router.push(`/posts/${router.query.id}?counter=123`, undefined, {
+            role="presentation"
+            onClick={() => {
+              router.push(`/posts/${router.query.id}?counter=123`, undefined, {
                 shallow: true,
-              })
-            }
+              });
+            }}
           >
             Update counter
           </span>

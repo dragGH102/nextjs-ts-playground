@@ -1,6 +1,10 @@
+// eslint-disable-next-line import/no-unresolved
 import * as express from 'express';
 
-export default function handler(req: express.Request, res: express.Response) {
+export default function handler(
+  req: express.Request,
+  res: express.Response,
+): void {
   const { method } = req;
 
   if (method === 'GET') {

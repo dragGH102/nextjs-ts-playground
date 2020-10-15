@@ -41,7 +41,7 @@ const Home: React.FC = ({ allPostsData }) => {
           <Title />
 
           <div className="grid">
-            <div href="https://nextjs.org/docs" className="card">
+            <a href="https://nextjs.org/docs" className="card">
               <h3>Hey</h3>
               <p>
                 [random page - Link routing]
@@ -49,8 +49,8 @@ const Home: React.FC = ({ allPostsData }) => {
                   <a>a random page!</a>
                 </Link>
               </p>
-            </div>
-            <div className="card">
+            </a>
+            <a className="card">
               <p>
                 {/* TODO fix this (probably must defined nested page file) */}
                 [dynamic route example]
@@ -58,8 +58,8 @@ const Home: React.FC = ({ allPostsData }) => {
                   <a>Go to comment [id].js with ?foo=abc</a>
                 </Link>
               </p>
-            </div>
-            <div className="card">
+            </a>
+            <a className="card">
               <p>
                 [catchallroute example]
                 <Link
@@ -69,7 +69,7 @@ const Home: React.FC = ({ allPostsData }) => {
                   <a>Click here to try it!</a>
                 </Link>
               </p>
-            </div>
+            </a>
             <a className="card">
               <p>
                 [optional catchall] The main difference between catch all and
@@ -86,7 +86,12 @@ const Home: React.FC = ({ allPostsData }) => {
             </a>
             <div className="card">
               [random page - imperative routing without /Link/ component]
-              <span onClick={() => router.push('/random-page')}>Click me!</span>
+              <span
+                role="presentation"
+                onClick={() => router.push('/random-page')}
+              >
+                Click me!
+              </span>
             </div>
 
             {/* more <a> blocks can go here */}
@@ -99,7 +104,8 @@ const Home: React.FC = ({ allPostsData }) => {
           </a>
         </footer>
 
-        {/* Note: these are css-in-js styles but also "pure css/scss modules" are used in this app */}
+        {/* Note: these are css-in-js styles but also "pure css/scss modules"
+        are used in this app */}
         <style jsx>
           {`
             .container {
