@@ -17,7 +17,7 @@ export default function CatchAllPage(): JSX.Element {
       </Head>
       <h1>
         {/* @ts-ignore */}
-        Slug: {slug?.join('/')} - slug[0] : {slug[0]}
+        Slug: {(slug as string[])?.join('/')} - slug[0] : {slug[0]}
       </h1>
       <article>{`query param: ${foo}`}</article>
     </Layout>
