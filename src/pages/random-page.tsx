@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import React, { useState } from 'react';
-import Alert from '@/components/Alert';
+import Alert from '@/components/alert';
 
 export default function RandomPage(): JSX.Element {
   const [alertDisplayed, setAlertDisplayed] = useState(false);

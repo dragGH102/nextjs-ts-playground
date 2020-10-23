@@ -1,6 +1,15 @@
 import '../../styles/global.scss';
 import React from 'react';
 
-export default function App({ Component, pageProps }): JSX.Element {
-  return <Component {...pageProps} />;
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '@/apollo/client';
+
+export default function App({ Component, pageProps }) {
+  const apolloClient = useApollo(pageProps.initialApolloState);
+
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }

@@ -17,7 +17,11 @@
   "extends": ["plugin:react/recommended", "airbnb", "prettier/react"],
   "plugins": ["react", "react-hooks", "jsx-a11y", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "consistent-return": "warn",
+    "global-require": "off",
+    "semi": [2, "never"],
+    "prettier/prettier": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",

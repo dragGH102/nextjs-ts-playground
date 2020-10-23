@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getAllPostIds, getPostData } from '@/lib/posts';
 import { PostData } from '@/lib/shared-types';
-import Layout from '@/components/Layout';
-import Date from '@/components/Date';
+import Layout from '@/components/layout';
+import Date from '@/components/date';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import utilStyles from '../../../styles/utils.module.css';

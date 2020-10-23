@@ -3,6 +3,21 @@ Thanks to https://github.com/jpedroschmitz/typescript-nextjs-starter for providi
 At the current stage, this is an enhanced version of the nextjs "get started" tutorial with:
 - using typescript
 - minor customizations
+- mysql connection & auth
+
+# DB creation commands
+
+    create database testdb;
+    use testdb;
+    CREATE TABLE `users` (
+        `id` VARCHAR(45) NOT NULL,
+        `createdAt` DATETIME NOT NULL,
+        `email` VARCHAR(45),
+        `hash` VARCHAR(255),
+        `salt` VARCHAR(45),
+        KEY `email` (`email`) USING BTREE,
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB;
 
 ## 🚀 Getting started
 
