@@ -5,6 +5,12 @@ At the current stage, this is an enhanced version of the nextjs "get started" tu
 - minor customizations
 - mysql connection & auth
 
+a .env file with 
+
+> TOKEN_SECRET="this-is-a-secret-value-with-at-least-32-characters"
+
+is required
+
 # DB creation commands
 
     create database testdb;
